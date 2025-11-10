@@ -1,18 +1,19 @@
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-
-function Header() {
-    return (
-        <header className="header-container">
-            <div className='logo'>FarmaSaúde</div>
-            <nav>
-                <link to="/">Home</link>
-                <link to="/servicos">Servicos</link>
-                <link to="/sobre-nos">SobreNos</link>
-                <link to="/fale-conosco">FaleConosco</link>
-            </nav>
-        </header>
-    );
+export default function Header() {
+  return (
+    <header className="site-header">
+      <div className="container">
+        <NavLink to="/" className="logo">Farmácia Dois Amigos</NavLink>
+        <nav>
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/servicos">Serviços</NavLink>
+          <NavLink to="/sobre">Sobre</NavLink>
+          <NavLink to="/contato">Contato</NavLink>
+          <NavLink to="/clientes">Clientes</NavLink>
+        </nav>
+      </div>
+    </header>
+  );
 }
-
-export default Header;

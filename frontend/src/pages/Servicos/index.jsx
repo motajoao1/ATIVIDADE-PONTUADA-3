@@ -1,50 +1,28 @@
+import React from 'react'
 
-function Servicos() {
-  
-  // Lista dos serviços (fácil de adicionar ou remover)
-  const servicosList = [
-    { 
-      titulo: 'Aferição de Pressão Arterial', 
-      descricao: 'Monitoramento preciso da sua pressão para um controle de saúde eficaz e seguro.' 
-    },
-    { 
-      titulo: 'Aplicação de Injetáveis', 
-      descricao: 'Administração segura de vacinas e medicamentos por profissionais treinados e qualificados.' 
-    },
-    { 
-      titulo: 'Testes Rápidos', 
-      descricao: 'Resultados em minutos para glicemia, COVID-19, dengue e mais, com total confiabilidade.' 
-    },
-    { 
-      titulo: 'Acompanhamento Farmacêutico', 
-      descricao: 'Orientação personalizada para o uso correto de medicamentos e adesão ao tratamento.' 
-    },
-    { 
-      titulo: 'Perfuração de Lóbulo', 
-      descricao: 'Aplicação de brincos de forma higiênica e segura para adultos e crianças.' 
-    },
-  ];
+const services = [
+  { id: 1, title: 'Aferição de pressão arterial', desc: 'Medição rápida e precisa realizada por profissionais.' },
+  { id: 2, title: 'Aplicação de injetáveis', desc: 'Serviço seguro com profissionais treinados.' },
+  { id: 3, title: 'Testes rápidos', desc: 'Glicemia, colesterol, e outros exames rápidos.' },
+  { id: 4, title: 'Orientação farmacêutica', desc: 'Conciliação de medicamentos e esclarecimento de dúvidas.' },
+  { id: 5, title: 'Vacinação', desc: 'Campanhas e vacinas rotineiras conforme calendário.' },
+  { id: 6, title: 'Acompanhamento de crônicos', desc: 'Apoio e orientações para pacientes com doenças crônicas.' }
+]
 
+export default function Servicos() {
   return (
-    // Usamos 'page-content' para manter um padding padrão
-    <div className="servicos-container page-content">
-      <div className="servicos-header">
-        <h1>Nossos Serviços</h1>
-        <p>Mais do que uma farmácia, um centro de cuidado à sua saúde.</p>
-      </div>
+    <section>
+      <h2>Serviços</h2>
+      <p className="small-muted">Conheça os serviços que oferecemos para cuidar da sua saúde.</p>
 
-      {/* Grid para os cartões de serviço */}
-      <div className="servicos-grid">
-        {/* Mapeia a lista de serviços para criar um card para cada um */}
-        {servicosList.map((servico, index) => (
-          <div key={index} className="servico-card">
-            <h3 className="servico-card-title">{servico.titulo}</h3>
-            <p className="servico-card-desc">{servico.descricao}</p>
-          </div>
+      <div className="services-grid" aria-live="polite">
+        {services.map(s => (
+          <article key={s.id} className="service-card" aria-label={s.title}>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </article>
         ))}
       </div>
-    </div>
-  );
+    </section>
+  )
 }
-
-export default Servicos;

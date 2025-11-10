@@ -1,37 +1,31 @@
-// Em App.jsx (ou onde suas rotas estão)
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+// ...existing code...
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import Header from './components/Header'
-import FaleConosco from "./pages/FaleConosco"
-import Servicos from './pages/Servicos/index'
-import SobreNos from './pages/SobreNos/index'
-import Home from './pages/Home'
-import Footer from './components/Footer'
-
-import React from "react";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-
-
-function App() {
+import Home from './Pages/Home'
+import Servicos from './pages/Servicos'
+import SobreNos from './Pages/SobreNos'
+import Contato from './Pages/Contato'
+import ListaClientes from './pages/ListaClientes'
+import './styles.css'
+import './index.css'
+export default function App() {
   return (
-    <>
-      <ToastContainer position="top-right" autoClose={3000} />
+    <div className="app">
       <Header />
-      <main className="main-content">
+      <main className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/SobreNos" element={<SobreNos />} />
-          <Route path="/Servicos" element={<Servicos />} />
-          <Route path="/Fale-Conosco" element={<FaleConosco />} />
+          <Route path="/servicos" element={<Servicos />} />
+          <Route path="/sobre" element={<SobreNos />} />
+          <Route path="/contato" element={<Contato />} />
+          <Route path="/clientes" element={<ListaClientes />} />
         </Routes>
       </main>
-      <Footer />
-    </>
-  );
+
+      <footer className="footer">© {new Date().getFullYear()} Farmácia Exemplo</footer>
+      <ToastContainer position="top-right" autoClose={4000} />
+    </div>
+  )
 }
-
-
-
-export default App;
