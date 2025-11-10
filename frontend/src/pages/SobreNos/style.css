@@ -1,0 +1,128 @@
+    .sobre-container {
+      /* Usamos min-height para garantir que o rodapé 
+         fique embaixo mesmo com pouco conteúdo */
+      min-height: calc(100vh - 120px); /* (altura total - header - footer) */
+      padding: 2.5rem 2rem; /* 40px horizontal, 32px vertical */
+      background-color: #f8f9fa; /* Um cinza bem claro de fundo */
+      
+      /* Limita a largura máxima do conteúdo e centraliza */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Cabeçalho da página */
+    .sobre-header {
+      text-align: center;
+      margin-bottom: 3rem; /* 48px */
+    }
+
+    .sobre-header h1 {
+      font-size: 2.5rem; /* 40px */
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 0.5rem; /* 8px */
+    }
+
+    .sobre-header p {
+      font-size: 1.1rem; /* 17.6px */
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Grid para os cartões */
+    .sobre-grid {
+      display: grid;
+      /* Cria colunas responsivas:
+         - Tenta criar o máximo de colunas de 350px que couberem.
+         - Em telas pequenas, será 1 coluna (ocupando 1fr - fração total).
+      */
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem; /* 32px de espaço entre os cartões */
+    }
+
+    /* Estilo individual de cada cartão */
+    .sobre-card {
+      background-color: #ffffff;
+      border-radius: 8px; /* Bordas arredondadas */
+      /* Sombra suave */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+      padding: 2rem; /* 32px de espaçamento interno */
+      /* Garante que os cards tenham a mesma altura (se estiverem na mesma linha) */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Estilo para o card "História" ocupar a largura total */
+    .sobre-card.full-width {
+      grid-column: 1 / -1; /* Ocupa todas as colunas do grid */
+      margin-bottom: 2rem; /* Espaço extra abaixo dele */
+    }
+
+    .sobre-card h3 {
+      font-size: 1.5rem; /* 24px */
+      font-weight: 600;
+      color: #0a7c0c; /* Cor verde principal */
+      margin-bottom: 1.5rem; /* 24px */
+      border-bottom: 2px solid #eee; /* Linha sutil abaixo do título */
+      padding-bottom: 0.5rem; /* 8px */
+    }
+
+    .sobre-card p {
+      font-size: 1rem; /* 16px */
+      color: #666;
+      line-height: 1.6; /* Espaçamento entre linhas */
+      margin-bottom: 1rem;
+    }
+
+    /* Estilização das listas (Valores e Horários) */
+    .valores-list,
+    .horario-list {
+      list-style: none; /* Remove os marcadores padrão */
+      padding-left: 0;
+      margin-bottom: 1rem;
+    }
+
+    .valores-list li {
+      position: relative;
+      padding-left: 1.5rem; /* Espaço para o marcador personalizado */
+      margin-bottom: 0.75rem; /* 12px */
+      color: #666;
+    }
+
+    /* Marcador personalizado (check verde) para a lista de Valores */
+    .valores-list li::before {
+      content: '✔'; /* Símbolo de check */
+      color: #0a7c0c;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    .horario-list li {
+      display: flex;
+      justify-content: space-between; /* Alinha "Segunda..." e "07:00..." */
+      color: #666;
+      margin-bottom: 0.75rem; /* 12px */
+      padding-bottom: 0.75rem;
+      border-bottom: 1px dashed #eee; /* Linha pontilhada separando os dias */
+    }
+
+    .horario-list li:last-child {
+      border-bottom: none; /* Remove a linha do último item */
+    }
+
+    .horario-list li strong {
+      color: #333; /* Cor mais escura para o dia da semana */
+    }
+
+    .horario-delivery {
+      font-weight: 600;
+      color: #0a7c0c;
+      text-align: center;
+      margin-top: 1rem;
+      background-color: #e8f5e9;
+      padding: 0.5rem;
+      border-radius: 4px;
+    }

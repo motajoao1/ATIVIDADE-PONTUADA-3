@@ -1,0 +1,78 @@
+/* * Estilo para a Página de Serviços (Servicos.css)
+ */
+
+/* Container principal da página de serviços */
+.servicos-container {
+  /* Usamos min-height para garantir que o rodapé 
+     fique embaixo mesmo com pouco conteúdo */
+  min-height: calc(100vh - 120px); /* (altura total - header - footer) */
+  padding: 2.5rem 2rem; /* 40px horizontal, 32px vertical */
+  background-color: #f8f9fa; /* Um cinza bem claro de fundo */
+}
+
+/* Cabeçalho da página de serviços */
+.servicos-header {
+  text-align: center;
+  margin-bottom: 3rem; /* 48px */
+}
+
+.servicos-header h1 {
+  font-size: 2.5rem; /* 40px */
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem; /* 8px */
+}
+
+.servicos-header p {
+  font-size: 1.1rem; /* 17.6px */
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Grid que segura os cartões de serviço */
+.servicos-grid {
+  display: grid;
+  /* Cria colunas responsivas:
+    - Tenta criar o máximo de colunas de 300px que couberem.
+    - Em telas pequenas, será 1 coluna (ocupando 1fr - fração total).
+  */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; /* 32px de espaço entre os cartões */
+  
+  /* Limita a largura máxima do grid e centraliza */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilo individual de cada cartão de serviço */
+.servico-card {
+  background-color: #ffffff;
+  border-radius: 8px; /* Bordas arredondadas */
+  /* Sombra suave */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  padding: 2rem; /* 32px de espaçamento interno */
+  text-align: center;
+  /* Efeito suave de transição */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse por cima do cartão */
+.servico-card:hover {
+  transform: translateY(-5px); /* Move o cartão 5px para cima */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Sombra mais forte */
+}
+
+.servico-card-title {
+  font-size: 1.4rem; /* 22.4px */
+  font-weight: 600;
+  /* Cor verde principal (mesma do seu tema) */
+  color: #0a7c0c; 
+  margin-bottom: 1rem; /* 16px */
+}
+
+.servico-card-desc {
+  font-size: 1rem; /* 16px */
+  color: #666;
+  line-height: 1.5; /* Espaçamento entre linhas */
+}

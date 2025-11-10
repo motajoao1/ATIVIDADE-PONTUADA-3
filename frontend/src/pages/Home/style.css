@@ -1,0 +1,84 @@
+/* * styles.css para o Componente Home
+ */
+
+/* Container principal do Hero */
+.hero-container {
+  /* Define a altura para preencher a tela (menos a altura do navbar, ex: 60px) */
+  min-height: calc(100vh - 60px);
+  
+  /* Centraliza o conteúdo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Fundo com gradiente suave */
+  background: linear-gradient(135deg, #e8f5e9, #d0f0d0);
+  
+  padding: 2rem; /* Espaçamento interno para telas pequenas */
+}
+
+/* Conteúdo de texto e botões */
+.hero-content {
+  text-align: center;
+  max-width: 650px; /* Limita a largura do texto */
+}
+
+/* Título principal (Nome da Farmácia) */
+.hero-title {
+  font-size: 3.8rem; /* Tamanho grande */
+  font-weight: 700;
+  color: #0a7c0c; /* Verde principal */
+  margin-bottom: 1rem;
+}
+
+/* Subtítulo (Slogan) */
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #333; /* Cor de texto escura */
+  margin-bottom: 2.5rem;
+}
+
+/* Container dos botões */
+.hero-cta-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Espaço entre os botões */
+  flex-wrap: wrap; /* Permite que os botões quebrem a linha em telas pequenas */
+}
+
+/* Estilo base comum para os botões CTA */
+.hero-btn {
+  padding: 0.75rem 1.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px; /* Botões arredondados */
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botão Primário (Nossos Serviços) */
+.hero-btn.primary {
+  background-color: #0a7c0c;
+  color: white;
+  border-color: #0a7c0c;
+}
+
+.hero-btn.primary:hover {
+  background-color: #08630a; /* Tom mais escuro ao passar o mouse */
+  transform: translateY(-2px); /* Efeito de elevação */
+}
+
+/* Botão Secundário (Fale Conosco) */
+.hero-btn.secondary {
+  background-color: white;
+  color: #0a7c0c;
+  border-color: #0a7c0c;
+}
+
+.hero-btn.secondary:hover {
+  background-color: #f8f9fa; /* Fundo levemente acinzentado */
+  transform: translateY(-2px);
+}
